@@ -9,7 +9,10 @@
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
-
+const LEFT_ARROW = 37
+const RIGHT_ARROW = 39
+const UP_ARROW = 38
+const DOWN_ARROW = 40
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
@@ -31,6 +34,21 @@ var beweegAlles = function () {
 
   // speler
 
+  if (keyIsDown(LEFT_ARROW)) {
+    spelerX -= 5;
+  }
+
+  if (keyIsDown(RIGHT_ARROW)) {
+    spelerX += 5;
+  }
+
+  if (keyIsDown(UP_ARROW)) {
+    spelerY -= 5;
+  }
+
+  if (keyIsDown(DOWN_ARROW)) {
+    spelerY += 5;
+  }
 };
 
 /**
