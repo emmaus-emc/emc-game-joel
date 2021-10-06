@@ -57,6 +57,7 @@ var beweegAlles = function () {
  * Updatet globale variabelen punten en health
  */
 var verwerkBotsing = function () {
+  
   // botsing speler tegen vijand
 
   // botsing kogel tegen vijand
@@ -68,7 +69,8 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-
+fill(42, 212, 198);
+rect(0,0,1280, 720);
   // vijand
 
   // kogel
@@ -105,7 +107,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background(42, 212, 198);
+  background(255,0,0);
 }
 
 /**
