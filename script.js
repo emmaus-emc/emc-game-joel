@@ -57,7 +57,11 @@ var beweegAlles = function () {
  * Updatet globale variabelen punten en health
  */
 var verwerkBotsing = function () {
-  
+  if (spelerX > 1280){
+    spelerX = 1280;
+    
+  } 
+ 
   // botsing speler tegen vijand
 
   // botsing kogel tegen vijand
