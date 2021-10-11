@@ -59,8 +59,12 @@ var beweegAlles = function () {
 var verwerkBotsing = function () {
   if (spelerX > 1280){
     spelerX = 1280;
-    
-  } 
+  }
+  if (spelerY > 720){
+    spelerY = 720;
+    }
+
+  
  
   // botsing speler tegen vijand
 
