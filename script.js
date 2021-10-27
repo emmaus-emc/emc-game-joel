@@ -31,7 +31,7 @@ var vijandY = 50;
  */
 var beweegAlles = function () {
   // vijand
- 
+ vijandY = vijandY + 20;
   // kogel
 
   // speler
@@ -70,6 +70,9 @@ var verwerkBotsing = function () {
   }
   if (spelerY < 0) {
     spelerY = 0;
+  }
+  if (vijandY > 720){
+    vijandY = 0;
   }
 
 
