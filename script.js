@@ -21,7 +21,7 @@ var spelerX = 625; // x-positie van speler
 var spelerY = 400; // y-positie van speler
 var vijandX = 625;
 var vijandY = 50;
-var hp = 51; 
+var hp = 100; 
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -114,8 +114,15 @@ ellipse(vijandX - 25,vijandY - 25, 50, 50);
   // punten en health
 textSize(64);
 text(hp, 30, 60);
-}
 
+if (vijandX - spelerX < 50 && 
+    vijandX - spelerX > -50 &&
+    vijandY - spelerY < 50 && 
+    vijandY - spelerY > -50)  {
+    
+    hp = hp - 1;
+      }
+}
 /**
  * return true als het gameover is
  * anders return false
