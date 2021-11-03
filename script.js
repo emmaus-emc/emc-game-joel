@@ -21,6 +21,7 @@ var spelerX = 625; // x-positie van speler
 var spelerY = 400; // y-positie van speler
 var vijandX = 625;
 var vijandY = 50;
+var hp = 51; 
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -37,19 +38,19 @@ var beweegAlles = function () {
   // speler
 
   if (keyIsDown(LEFT_ARROW)) {
-    spelerX -= 5;
+    spelerX -= 10;
   }
 
   if (keyIsDown(RIGHT_ARROW)) {
-    spelerX += 5;
+    spelerX += 10;
   }
 
   if (keyIsDown(UP_ARROW)) {
-    spelerY -= 5;
+    spelerY -= 10;
   }
 
   if (keyIsDown(DOWN_ARROW)) {
-    spelerY += 5;
+    spelerY += 10;
   }
 };
 
@@ -78,7 +79,16 @@ var verwerkBotsing = function () {
 
 
   // botsing speler tegen vijand
+  if (vijandX - spelerX < 50 && 
+      vijandX - spelerX > -50) {
+    (vijandY - spelerY < 50 && 
+    vijandY - spelerY > -50) 
+        console.log("geraakt")
+    }
+  
+  
 
+  
   // botsing kogel tegen vijand
 
 };
@@ -102,7 +112,8 @@ ellipse(vijandX - 25,vijandY - 25, 50, 50);
   ellipse(spelerX, spelerY, 10, 10);
 
   // punten en health
-
+textSize(64);
+text(hp, 30, 60);
 };
 
 /**
