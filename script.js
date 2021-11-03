@@ -114,7 +114,7 @@ ellipse(vijandX - 25,vijandY - 25, 50, 50);
   // punten en health
 textSize(64);
 text(hp, 30, 60);
-};
+}
 
 /**
  * return true als het gameover is
