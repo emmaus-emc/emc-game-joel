@@ -21,7 +21,7 @@ var spelerX = 625; // x-positie van speler
 var spelerY = 400; // y-positie van speler
 var vijandX = 625;
 var vijandY = 50;
-var hp = 100; 
+var hp = 100;
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -32,7 +32,7 @@ var hp = 100;
  */
 var beweegAlles = function () {
   // vijand
- vijandY = vijandY + 20;
+  vijandY = vijandY + 20;
   // kogel
 
   // speler
@@ -72,23 +72,23 @@ var verwerkBotsing = function () {
   if (spelerY < 0) {
     spelerY = 0;
   }
-  if (vijandY > 720){
+  if (vijandY > 720) {
     vijandY = 0;
   }
 
 
 
   // botsing speler tegen vijand
-  if (vijandX - spelerX < 50 && 
-      vijandX - spelerX > -50) {
-    (vijandY - spelerY < 50 && 
-    vijandY - spelerY > -50) 
-        console.log("geraakt")
-    }
-  
-  
+  if (vijandX - spelerX < 50 &&
+    vijandX - spelerX > -50) {
+    (vijandY - spelerY < 50 &&
+      vijandY - spelerY > -50)
+    console.log("geraakt")
+  }
 
-  
+
+
+
   // botsing kogel tegen vijand
 
 };
@@ -101,8 +101,8 @@ var tekenAlles = function () {
   fill(42, 212, 198);
   rect(0, 0, 1280, 720);
   // vijand
-fill("red")
-ellipse(vijandX - 25,vijandY - 25, 50, 50);
+  fill("red")
+  ellipse(vijandX - 25, vijandY - 25, 50, 50);
   // kogel
 
   // speler
@@ -112,23 +112,28 @@ ellipse(vijandX - 25,vijandY - 25, 50, 50);
   ellipse(spelerX, spelerY, 10, 10);
 
   // punten en health
-textSize(64);
-text(hp, 30, 60);
+  textSize(64);
+  text(hp, 30, 60);
 
-if (vijandX - spelerX < 50 && 
+  if (vijandX - spelerX < 50 &&
     vijandX - spelerX > -50 &&
-    vijandY - spelerY < 50 && 
-    vijandY - spelerY > -50)  {
-    
+    vijandY - spelerY < 50 &&
+    vijandY - spelerY > -50) {
+
     hp = hp - 1;
-      }
+  }
 }
 /**
  * return true als het gameover is
  * anders return false
  */
 var checkGameOver = function () {
-  return false;
+  if (hp <= 0) {
+    return true
+  }
+  else {
+    return false;
+  }
 };
 
 /* ********************************************* */
