@@ -22,7 +22,7 @@ var spelerY = 400; // y-positie van speler
 var vijandX = 625;
 var vijandY = 50;
 var hp = 100;
-
+var points = 0;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -78,6 +78,8 @@ var verwerkBotsing = function () {
 
 
 
+
+
   // botsing speler tegen vijand
   if (vijandX - spelerX < 50 &&
     vijandX - spelerX > -50) {
@@ -114,6 +116,8 @@ var tekenAlles = function () {
   // punten en health
   textSize(64);
   text(hp, 30, 60);
+  points = points + 1 / 50;
+  text('points: \n' + floor(points), 900, 80)
 
   if (vijandX - spelerX < 50 &&
     vijandX - spelerX > -50 &&
@@ -159,16 +163,27 @@ function setup() {
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
 function draw() {
+
   if (spelStatus === SPELEN) {
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
-    if (checkGameOver()) {
+    if (checkGameOver(hp < 1)) {
+
       spelStatus = GAMEOVER;
     }
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
+    background: ('black')
+    textSize(150)
+    fill('red')
+    text('Game over',176,360)
+    textsize(90)
+    fill('red')
+    text('score'+ floor(points), 170, 340)
+
+
 
   }
 }
