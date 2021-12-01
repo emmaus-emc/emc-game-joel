@@ -19,7 +19,7 @@ var spelStatus = SPELEN;
 
 var spelerX = 625; // x-positie van speler
 var spelerY = 400; // y-positie van speler
-var vijandX = 625;
+var vijandX = 400;
 var vijandY = 50;
 var hp = 100;
 var points = 0;
@@ -33,6 +33,7 @@ var points = 0;
 var beweegAlles = function () {
   // vijand
   vijandY = vijandY + 20;
+  
   // kogel
 
   // speler
@@ -75,19 +76,20 @@ var verwerkBotsing = function () {
   if (vijandY > 720) {
     vijandY = 0;
   }
-
-
+  
 
 
 
   // botsing speler tegen vijand
-  if (vijandX - spelerX < 50 &&
-    vijandX - spelerX > -50) {
-    (vijandY - spelerY < 50 &&
-      vijandY - spelerY > -50)
-    console.log("geraakt")
+  for (var i = 0; i < 8; i = i + 1) {
+    if ((vijandX + i * 100) - spelerX < 50 &&
+       (vijandX + i * 100)- spelerX > -50 &&
+      vijandY - spelerY < 50 &&
+      vijandY - spelerY > -50) {
+      console.log("geraakt");
+      hp = hp - 1;
+    }
   }
-
 
 
 
@@ -104,7 +106,13 @@ var tekenAlles = function () {
   rect(0, 0, 1280, 720);
   // vijand
   fill("red")
-  ellipse(vijandX - 25, vijandY - 25, 50, 50);
+  for
+  (var i = 0; i < 8; i = i + 1) {
+    ellipse(vijandX + i * 100 - 25, vijandY - 25, 50, 50);
+    console.log(vijandX + i * 100)
+  }
+
+
   // kogel
 
   // speler
@@ -119,13 +127,7 @@ var tekenAlles = function () {
   points = points + 1 / 50;
   text('points: \n' + floor(points), 900, 80)
 
-  if (vijandX - spelerX < 50 &&
-    vijandX - spelerX > -50 &&
-    vijandY - spelerY < 50 &&
-    vijandY - spelerY > -50) {
 
-    hp = hp - 1;
-  }
 }
 /**
  * return true als het gameover is
@@ -178,10 +180,10 @@ function draw() {
     background: ('black')
     textSize(150)
     fill('red')
-    text('Game over',176,360)
+    text('Game over', 176, 360)
     textsize(90)
     fill('red')
-    text('score'+ floor(points), 170, 340)
+    text('score' + floor(points), 170, 340)
 
 
 
