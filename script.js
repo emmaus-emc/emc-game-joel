@@ -23,6 +23,7 @@ var vijandX = 400;
 var vijandY = 50;
 var hp = 100;
 var points = 0;
+var vijandXlijst= [400,500,550,700,800,900,1000,1100];
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -82,8 +83,8 @@ var verwerkBotsing = function () {
 
   // botsing speler tegen vijand
   for (var i = 0; i < 8; i = i + 1) {
-    if ((vijandX + i * 100) - spelerX < 50 &&
-       (vijandX + i * 100)- spelerX > -50 &&
+    if (vijandXlijst[i] - spelerX < 50 &&
+       vijandXlijst[i]- spelerX > -50 &&
       vijandY - spelerY < 50 &&
       vijandY - spelerY > -50) {
       console.log("geraakt");
@@ -108,8 +109,7 @@ var tekenAlles = function () {
   fill("red")
   for
   (var i = 0; i < 8; i = i + 1) {
-    ellipse(vijandX + i * 100 - 25, vijandY - 25, 50, 50);
-    console.log(vijandX + i * 100)
+    ellipse(vijandXlijst[i], vijandY - 25, 50, 50);
   }
 
 
