@@ -17,7 +17,7 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 var kogelX = 300;
-var kogelY = 400;
+var kogelY = 0;
 var spelerX = 625; // x-positie van speler
 var spelerY = 400; // y-positie van speler
 var vijandX = 400;
@@ -34,10 +34,10 @@ var vijandXlijst = [400, 500, 550, 700, 800, 900, 1000, 1100];
  */
 var beweegAlles = function () {
   // vijand
-  vijandY = vijandY + 20;
+  vijandY = vijandY + 5;
 
   // kogel
-if ()
+  kogelY = kogelY - 15;
 
   // speler
 
@@ -59,7 +59,7 @@ if ()
   if (keyIsDown(32)) {
     kogelX = spelerX;
     kogelY = spelerY - 50;
-    else kogelY
+
   }
 };
 
@@ -101,8 +101,14 @@ var verwerkBotsing = function () {
 
 
 
-  // botsing kogel tegen vijand
 
+  // botsing kogel tegen vijand
+  for (var i = 0; i < 8; i = i + 1) {
+    if (kogelX - vijandXlijst[i] < 50 && kogelX - vijandXlijst[i] > -50 && kogelY - vijandY < 50 && kogelY - vijandY > -50) {
+      console.log("geraakt");
+
+    }
+  }
 };
 
 /**
