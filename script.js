@@ -106,7 +106,7 @@ var verwerkBotsing = function () {
   // botsing kogel tegen vijand
   for (var i = 0; i < 8; i = i + 1) {
     if (kogelX - vijandXlijst[i] < 50 && kogelX - vijandXlijst[i] > -50 && kogelY - vijandY < 50 && kogelY - vijandY > -50) {
-      console.log("geraakt");
+      console.log("botsing");
 
     }
   }
@@ -196,7 +196,7 @@ function draw() {
     textSize(150)
     fill('red')
     text('Game over', 176, 360)
-    textsize(90)
+    textSize(90)
     fill('red')
     text('score' + floor(points), 170, 340)
 
