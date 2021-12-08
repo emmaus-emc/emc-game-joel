@@ -25,6 +25,7 @@ var vijandY = 50;
 var hp = 100;
 var points = 0;
 var vijandXlijst = [400, 500, 550, 700, 800, 900, 1000, 1100];
+var vijandYlijst = [0];
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -41,22 +42,22 @@ var beweegAlles = function () {
 
   // speler
 
-  if (keyIsDown(LEFT_ARROW)) {
+  if (keyIsDown(65)) {
     spelerX -= 10;
   }
 
-  if (keyIsDown(RIGHT_ARROW)) {
+  if (keyIsDown(68)) {
     spelerX += 10;
   }
 
-  if (keyIsDown(UP_ARROW)) {
+  if (keyIsDown(87)) {
     spelerY -= 10;
   }
 
-  if (keyIsDown(DOWN_ARROW)) {
+  if (keyIsDown(83)) {
     spelerY += 10;
   }
-  if (keyIsDown(32)) {
+  if (mouseIsPressed) {
     kogelX = spelerX;
     kogelY = spelerY - 50;
 
@@ -128,7 +129,7 @@ var tekenAlles = function () {
 
   // kogel
   fill("black");
-  ellipse(kogelX - 25, kogelY - 25, 50, 50);
+  ellipse(kogelX - 25, kogelY - 25, 20, 20);
   // speler
   fill("white");
   rect(spelerX - 25, spelerY - 25, 50, 50);
